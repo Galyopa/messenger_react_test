@@ -5,6 +5,8 @@ import { HashRouter } from 'react-router-dom';
 import { App } from './App';
 import { store } from './app/app';
 import { saveState } from './app/LocalStorage';
+import './styles/reset.css';
+import './styles/App.scss';
 
 store.subscribe(
   () => {

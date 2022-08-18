@@ -1,8 +1,9 @@
 import { FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { useAppDispatch } from '../app/hooks';
-import { addMessageToHistory } from '../app/features/chats';
-import { getAnswer } from '../api/answerFromChuk';
+import { useAppDispatch } from '../../app/hooks';
+import { addMessageToHistory } from '../../app/features/chats';
+import { getAnswer } from '../../api/answerFromChuk';
+import './sendForm.scss';
 
 type Props = {
   chatId: string | undefined;
@@ -22,7 +23,7 @@ export const SendMessageForm:FC<Props> = ({ chatId }) => {
         messageId: uuidv4(),
         text: textMessage.trim(),
         isAuthor: true,
-        date: Date(),
+        date: new Date().toString(),
       };
 
       dispatch(addMessageToHistory(newMessage));
@@ -33,7 +34,7 @@ export const SendMessageForm:FC<Props> = ({ chatId }) => {
           messageId: uuidv4(),
           text: re.value,
           isAuthor: false,
-          date: Date(),
+          date: new Date().toString(),
         };
 
         dispatch(addMessageToHistory(Answer));
@@ -44,17 +45,31 @@ export const SendMessageForm:FC<Props> = ({ chatId }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="message">
+    <form
+      className="sendForm"
+      onSubmit={handleSubmit}
+    >
+      <label
+        className="sendForm__label"
+        htmlFor="message"
+      >
         <input
-          value={textMessage}
+          className="sendForm__input"
+          autoComplete="off"
           type="text"
+          value={textMessage}
           name="message"
           id="message"
+          placeholder="Message"
           onChange={event => setTextMessage(event.target.value)}
         />
       </label>
-      <button type="submit">Send</button>
+      <button
+        className="sendForm__button"
+        type="submit"
+      >
+        Send
+      </button>
     </form>
   );
 };
