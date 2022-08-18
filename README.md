@@ -1,1 +1,1 @@
-[DEMO LINK](https://galyopa.github.io/Evo_Fintech_test)
+[DEMO LINK](https://galyopa.github.io/messenger_react_test)
