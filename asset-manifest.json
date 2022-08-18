@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "./static/css/main.7e501a7b.chunk.css",
+    "main.js": "./static/js/main.91231f9b.chunk.js",
+    "main.js.map": "./static/js/main.91231f9b.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.c38a48d0.js",
+    "runtime-main.js.map": "./static/js/runtime-main.c38a48d0.js.map",
+    "static/js/2.b3f1754e.chunk.js": "./static/js/2.b3f1754e.chunk.js",
+    "static/js/2.b3f1754e.chunk.js.map": "./static/js/2.b3f1754e.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.7e501a7b.chunk.css.map": "./static/css/main.7e501a7b.chunk.css.map",
+    "static/js/2.b3f1754e.chunk.js.LICENSE.txt": "./static/js/2.b3f1754e.chunk.js.LICENSE.txt",
+    "static/media/messages.scss": "./static/media/bg.chats.13a5a8d1.png",
+    "static/media/chats.scss": "./static/media/search.7ba68b67.svg",
+    "static/media/sendForm.scss": "./static/media/send-icon.0c168a5d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c38a48d0.js",
+    "static/js/2.b3f1754e.chunk.js",
+    "static/css/main.7e501a7b.chunk.css",
+    "static/js/main.91231f9b.chunk.js"
+  ]
+}
