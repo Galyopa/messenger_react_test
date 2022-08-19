@@ -24,7 +24,7 @@ export const ChatsItem: FC<Props> = ({ chat }) => {
   const { text } = chat.messageHistory[lastMessageIndex];
 
   return (
-    <li className="chats__item" key={chat.userId}>
+    <li className="chats__item">
       <NavLink
         className={getActiveClasses}
         to={chat.userId}

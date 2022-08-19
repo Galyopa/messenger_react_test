@@ -41,10 +41,12 @@ export const SendMessageForm:FC<Props> = ({ chatId, username }) => {
 
         dispatch(addMessageToHistory(Answer));
 
-        toast(
-          <h2>{username}</h2>,
-          <p>{re.value}</p>,
-        );
+        toast(() => (
+          <>
+            <h3 style={{ color: 'black' }}>{username}</h3>
+            <p>{re.value}</p>
+          </>
+        ));
       });
     }
 
@@ -73,6 +75,7 @@ export const SendMessageForm:FC<Props> = ({ chatId, username }) => {
             onChange={event => setTextMessage(event.target.value)}
           />
         </label>
+
         <button
           className="sendForm__button"
           type="submit"

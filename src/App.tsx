@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Messages } from './components/Messages';
-import { ChatsList } from './components/ChatsList';
+import { Chats } from './components/Chats';
 
 export const App: FC = () => (
   <div className="page__container">
     <Routes>
-      <Route path="/" element={<ChatsList />}>
+      <Route path="/" element={<Chats />}>
         <Route
           index
           element={(
@@ -18,10 +18,6 @@ export const App: FC = () => (
         <Route path=":userId" element={<Messages />} />
       </Route>
       <Route path="home" element={<Navigate to="/" />} />
-      <Route
-        path="*"
-        element={<h1>Page not found</h1>}
-      />
     </Routes>
   </div>
 );

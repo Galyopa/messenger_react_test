@@ -1,9 +1,8 @@
 import classNames from 'classnames';
-import {
-  FC, useEffect, useRef,
-} from 'react';
+import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppSelector } from '../../app/hooks';
+import { useChatScroll } from '../../utils/useChatScroll';
 import { SendMessageForm } from '../SendMessageForm';
 import './messages.scss';
 
@@ -11,22 +10,6 @@ const dateOptions: Intl.DateTimeFormatOptions = {
   dateStyle: 'short',
   timeStyle: 'medium',
 };
-
-function useChatScroll<T>(dep: T):React.RefObject<HTMLDivElement> | undefined {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.scrollTop = ref.current.scrollHeight;
-    }
-  }, [dep]);
-
-  if (ref) {
-    return ref;
-  }
-
-  return undefined;
-}
 
 export const Messages: FC = () => {
   const { userId } = useParams();

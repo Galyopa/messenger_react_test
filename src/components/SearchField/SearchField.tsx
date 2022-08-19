@@ -1,4 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
+import { getSearchWith } from '../../utils/searchHelper';
 
 export const SearchField = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -9,8 +10,12 @@ export const SearchField = () => {
       <input
         className="chats__search"
         value={query}
-        onChange={event => setSearchParams({ query: event.target.value })}
-        type="text"
+        onChange={event => setSearchParams(
+          getSearchWith(searchParams, {
+            query: event.target.value || null,
+          }),
+        )}
+        type="search"
         placeholder="Search"
       />
     </label>
